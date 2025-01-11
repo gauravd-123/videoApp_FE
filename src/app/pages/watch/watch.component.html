@@ -1,0 +1,33 @@
+<div *ngIf="!isVideoPlayerActive" class="back-btn" (click)="backToHome()">
+  <p>Back</p>
+</div>
+
+<div class="movie-container" *ngIf="movie">
+  <!-- Poster Section -->
+  <div class="poster-section">
+    <img [src]="movie.Poster" alt="{{ movie.Title }}" />
+  </div>
+
+  <!-- Details Section -->
+  <div class="details-section">
+    <h1>{{ movie.Title }} ({{ movie.Year }})</h1>
+    <p class="genre">{{ movie.Genre }}</p>
+    <p class="runtime">Runtime: {{ movie.Runtime }}</p>
+    <p class="rating">
+      IMDB Rating: ⭐ {{ movie.imdbRating }} / 10 <span>({{ movie.imdbVotes }} votes)</span>
+    </p>
+    <p class="plot">{{ movie.Plot }}</p>
+    <p class="additional-info">
+      <strong>Director:</strong> {{ movie.Director }}<br />
+      <strong>Actors:</strong> {{ movie.Actors }}<br />
+      <strong>Language:</strong> {{ movie.Language }}<br />
+      <strong>Awards:</strong> {{ movie.Awards }}
+    </p>
+    <button mat-raised-button class="watch-button" (click)="watchMovie()">Watch Now</button>
+  </div>
+</div>
+
+<div *ngIf="isVideoPlayerActive" class="video-player">
+  <video controls [src]="videoUrl" autoplay></video>
+  <button class="close-button" mat-raised-button color="warn" (click)="closeVideoPlayer()">Close</button>
+</div>

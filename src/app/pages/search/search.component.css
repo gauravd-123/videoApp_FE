@@ -1,0 +1,66 @@
+.textInput{
+    background-color: azure;
+}
+
+.search-bar{
+    background-color: #fff;
+}
+
+.search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Space between items */
+    margin-top: 20px;
+  }
+  
+  .result-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: #1a1a1a; /* Background color */
+    padding: 16px;
+    border-radius: 8px;
+    gap: 16px; /* Space between image and details */
+    cursor: pointer; /* Make it look clickable */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth animations */
+  }
+  
+  .result-item img {
+    width: 80px; /* Thumbnail size */
+    height: auto;
+    border-radius: 4px; /* Rounded corners for the image */
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+  
+  .result-item .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+  }
+  
+  .result-item h3 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+  
+  .result-item p {
+    margin: 8px 0;
+    font-size: 0.9rem;
+    color: #ccc; /* Slightly dimmed color for the description */
+  }
+  
+  /* Hover and focus styles */
+  .result-item:hover,
+  .result-item:focus {
+    transform: translateY(-2px); /* Lift the item */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Active/click styles */
+  .result-item:active {
+    transform: translateY(2px); /* Push down slightly */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #282828; /* Slightly darker background on click */
+  }
+  

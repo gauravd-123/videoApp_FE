@@ -1,0 +1,160 @@
+<div class="sidebar" >
+	<div class="nav-item active">
+		<i class="bx bx-home"></i>
+	</div>
+	<div class="nav-item" (click)="toggleSearch()">
+		<i class="bx bx-search"></i>
+	</div>
+	<div class="nav-item">
+		<i class="bx bx-film"></i>
+	</div>
+	<div class="nav-item">
+		<i class="bx bx-play-circle"></i>
+	</div>
+	<div class="nav-item">
+		<i class="bx bx-heart"></i>
+	</div>
+	<div class="nav-item">
+		<i class="bx bx-user"></i>
+	</div>
+</div>
+
+<div class="search-overlay" *ngIf="showSearch">
+    <app-search></app-search>
+    <button class="close-btn" (click)="toggleSearch()">Close</button>
+</div>
+
+<div class="main-content">
+	<div class="header">
+		<video muted class="background-video" id="backgroundVideo">
+			<source src="https://assets.codepen.io/252820/MH-Netflix.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+
+		<div class="header-info">
+			<div class="netflix-series">
+				<img src="https://assets.codepen.io/252820/image.png" alt="Netflix N" />
+				<span class="series-text">SERIES</span>
+			</div>
+			<h1><span class="title-money">Money</span> <span class="title-heist">Heist</span></h1>
+			<p>
+				<img src="https://assets.codepen.io/252820/imdb.png" alt="IMDb" /> 8.8/10
+			</p>
+			<p><strong><span class="count">2B+</span> Streams</strong></p>
+			<div class="button-group">
+				<a href="https://www.youtube.com/embed/_InqQJRqGW4?autoplay=1&fs=1" class="btn play">Play</a>
+				<a href="#" class="btn trailer" id="watchTrailer">Watch Trailer</a>
+			</div>
+		</div>
+	</div>
+	<div class="section new-this-week">
+		<h2>New this week</h2>
+		<div class="scrollable-row">
+			<div class="poster" data-landscape="https://via.assets.so/movie.png?id=1&q=95&w=360&h=240">
+				<img src="https://via.assets.so/movie.png?id=1&q=95&w=160&h=240" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=1&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=3&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=3&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=4&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=4&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=5&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=5&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=6&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=6&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=7&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=7&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=8&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=8&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=9&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=9&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=10&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=10&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=11&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=11&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=12&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=12&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=13&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=13&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Trending Now Section -->
+	<div class="section trending-now">
+		<h2>Trending Now</h2>
+		<div class="scrollable-row">
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=22&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=22&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=23&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=23&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=24&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=24&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=25&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=25&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=26&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=26&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=27&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=27&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=28&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=28&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=29&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=29&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=30&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=30&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=31&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=31&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=32&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=32&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+			<div class="poster">
+				<img src="https://via.assets.so/movie.png?id=33&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
+				<img src="https://via.assets.so/movie.png?id=33&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
+			</div>
+
+		</div>
+	</div>
+</div>

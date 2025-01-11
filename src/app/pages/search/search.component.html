@@ -1,0 +1,47 @@
+<!-- <div class="search-bar">
+    <input [(ngModel)]="searchTerm" placeholder="Search for a movie..." />
+    <mat-form-field class="example-form-field">
+      <mat-label>Search your show...</mat-label>
+      <input matInput type="text" class="textInput" [(ngModel)]="searchTerm" placeholder="Search for..">
+      @if (searchTerm) {
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="searchTerm=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onSearch()">Search</button>
+  </div> -->
+
+  <div class="search-bar">
+    <mat-form-field class="example-form-field">
+      <mat-label>Search your show...</mat-label>
+      <input
+        matInput
+        type="text"
+        class="textInput"
+        (keyup)="onSearchKeyUp($event)"
+        [(ngModel)]="searchTerm"
+        placeholder="Search for..."
+      />
+      <button *ngIf="searchTerm" matSuffix mat-icon-button aria-label="Clear" (click)="searchTerm=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  
+  <div *ngIf="searchResults" class="search-results">
+    <div *ngFor="let result of searchResults" class="result-item" (click)="goToWatch(result)" 
+    tabindex="0"
+    role="button"
+    >
+      <img [src]="result.Poster" alt="{{ result.Title }}" />
+      <div class="details">
+        <h3>{{ result.Title }}</h3>
+        <p>{{ result.Plot }}</p>
+        <p class="rating">
+          IMDB Rating: ⭐ {{ result.imdbRating }} / 10 <span>({{ result.imdbVotes }} votes)</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  

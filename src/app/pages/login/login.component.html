@@ -1,0 +1,150 @@
+<p>login works!</p>
+
+
+<!-- Login -->
+<div *ngIf="dataService.isUserRegistered">
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput [(ngModel)]="username" placeholder="Enter your name" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input
+      matInput
+      type="password"
+      [(ngModel)]="passwd"
+      placeholder="Enter your password"
+    />
+  </mat-form-field>
+</div>
+
+<button mat-raised-button (click)="login($event)">Login</button>
+
+
+<!-- //Register -->
+<div *ngIf="!dataService.isUserRegistered">
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput [(ngModel)]="username" placeholder="Enter your name" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input
+      matInput
+      type="password"
+      [(ngModel)]="passwd"
+      placeholder="Enter your password"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Re-enter Password</mat-label>
+    <input
+      matInput
+      type="password"
+      [(ngModel)]="passwd"
+      placeholder="Enter your password"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Contact No.</mat-label>
+    <input
+      matInput
+      [(ngModel)]="contactNo"
+      placeholder="Enter your contact number"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email Id</mat-label>
+    <input
+      matInput
+      [(ngModel)]="email"
+      placeholder="Enter your email address"
+    />
+  </mat-form-field>
+
+  <button mat-raised-button (click)="register($event)">Register</button>
+</div>
+
+<h6 *ngIf="dataService.isUserRegistered">
+  Not a user? <a (click)="toggleLogin()"> Register</a>
+</h6>
+<h6 *ngIf="!dataService.isUserRegistered">
+  Already a user? <a (click)="toggleLogin()"> Login</a>
+</h6>
+
+
+
+<div id="Login">
+  <div class="opactity_controller">
+    <header>
+      <img src="../assets/logo.png" alt="logo" />
+    </header>
+
+    <div class="content">
+      <div>
+        <h1>Welcome</h1>
+
+        <!-- <form action="submit"> -->
+          <!-- <input type="text" placeholder="Enter your mail address" /> -->
+          <mat-form-field style="background-color: rgb(246, 238, 27);">
+            <mat-label>Username</mat-label>
+            <input matInput [(ngModel)]="username" placeholder="Enter your name" />
+          </mat-form-field>
+          <!-- <input type="password" placeholder="Enter your Password" /> -->
+          <mat-form-field style="background-color: rgb(246, 238, 27);">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              type="password"
+              [(ngModel)]="passwd"
+              placeholder="Enter your password"
+            />
+          </mat-form-field >
+          <!-- <button  type="submit">Welcome</button> -->
+          <button style="background-color: rgb(246, 238, 27);" mat-raised-button (click)="login($event)">Login</button>
+          <!-- <button mat-flat-button style="background-color: rgb(246, 238, 27);">Basic</button> -->
+          <div>
+            <label htmlFor="remember-login">
+              <input
+                type="checkbox"
+                defaultChecked
+                name="remember"
+                id="remember-login"
+              />
+              <span>Lembre-se de mim</span>
+            </label>
+            <a href="http://localhost:4200">Precisa de ajuda?</a>
+          </div>
+        <!-- </form> -->
+        <button>
+          <img src="../assets/vectors/facebook.svg" alt="facebook" /> Conectar
+          com o facebook
+        </button>
+        <h6>Novo por aqui? <span>Assine agora</span></h6>
+        <span>
+          Esta página é protegida pelo Google reCAPTCHA
+          <br />
+          para garantir que você não é um robô. <a href="">Saiba mais.</a>
+        </span>
+      </div>
+    </div>
+
+    <footer>
+      <p>Dúvidas? Ligue <a>0800-761-4631</a></p>
+
+      <ul>
+        <li>Termos dos Cartões pré-pagos</li>
+        <li>Termos de uso</li>
+        <li>Declaração de privacidade</li>
+      </ul>
+
+      <div>
+        <img src="../assets/vectors/globe.svg" alt="globo" />
+        <select name="select" id="select">
+          <option value="a">Português</option>
+          <option value="b">Inglês</option>
+        </select>
+      </div>
+    </footer>
+  </div>
+</div>
