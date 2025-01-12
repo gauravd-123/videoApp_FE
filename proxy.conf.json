@@ -1,6 +1,6 @@
 {
     "/api": {
-      "target": "http://video-app.runasp.net",
+      "target": "https://video-app.runasp.net",
       "secure": false,
       "changeOrigin": true,
       "logLevel": "debug"

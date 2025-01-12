@@ -1,6 +1,6 @@
 export const environment = {
     production: false,
-    apiBaseUrl: 'http://video-app.runasp.net/api/',
+    apiBaseUrl: 'https://video-app.runasp.net/api/',
     apiTestUrl: 'https://localhost:7294/api/',
     omdbUrl: 'https://www.omdbapi.com/', //https://www.omdbapi.com/?t=Fight&apikey=30285199  // https://omdbapi.com/?type=series&t=prison%20break&apikey=30285199
     omdbApiKey: '30285199',
