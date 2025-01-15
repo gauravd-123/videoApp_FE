@@ -17,6 +17,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './pages/register/register.component';
 import { WatchComponent } from './pages/watch/watch.component';
 import { SearchComponent } from './pages/search/search.component';
+import { LoaderComponent } from './pages/loader/loader.component';
 // import { UploadComponent } from './pages/upload/upload.component';
 
 const appRoutes : Routes = [
@@ -34,7 +35,8 @@ const appRoutes : Routes = [
     HomeComponent,
     LoginComponent,
     SearchComponent,
-    WatchComponent
+    WatchComponent,
+    LoaderComponent
     // UploadComponent,
     // RegisterComponent
   ],

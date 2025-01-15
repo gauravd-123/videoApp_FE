@@ -1,4 +1,10 @@
-<div class="sidebar" >
+<button class="hamburger" (click)="toggleMenu()">
+	<span></span>
+	<span></span>
+	<span></span>
+</button>
+<div class="sidebar" [class.open]="menuOpen">
+	
 	<div class="nav-item active">
 		<i class="bx bx-home"></i>
 	</div>
@@ -47,114 +53,40 @@
 			</div>
 		</div>
 	</div>
+	
 	<div class="section new-this-week">
-		<h2>New this week</h2>
+		<h2>Available</h2>
 		<div class="scrollable-row">
-			<div class="poster" data-landscape="https://via.assets.so/movie.png?id=1&q=95&w=360&h=240">
-				<img src="https://via.assets.so/movie.png?id=1&q=95&w=160&h=240" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=1&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=3&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=3&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=4&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=4&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=5&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=5&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=6&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=6&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=7&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=7&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=8&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=8&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=9&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=9&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=10&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=10&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=11&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=11&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=12&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=12&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=13&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=13&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-
+		  <div 
+			class="poster" 
+			*ngFor="let movie of availableMovies"
+		  >
+			<img
+			  class="poster-portrait"
+			  style="width: 200px;"
+			  [src]="movie.poster"
+			  alt="{{ movie.poster }}"
+			  (click)="goWatchFromHome(movie.fileName)"
+			/>
+			
+		  </div>
 		</div>
 	</div>
 
-	<!-- Trending Now Section -->
-	<div class="section trending-now">
-		<h2>Trending Now</h2>
+	<div class="section new-this-week">
+		<h2>Trending</h2>
 		<div class="scrollable-row">
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=22&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=22&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=23&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=23&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=24&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=24&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=25&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=25&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=26&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=26&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=27&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=27&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=28&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=28&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=29&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=29&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=30&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=30&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=31&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=31&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=32&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=32&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-			<div class="poster">
-				<img src="https://via.assets.so/movie.png?id=33&q=95&w=160&h=240&fit=fill" class="poster-portrait" alt="Portrait Placeholder">
-				<img src="https://via.assets.so/movie.png?id=33&q=95&w=360&h=240&fit=fill" class="poster-landscape" alt="Landscape Placeholder">
-			</div>
-
+		  <div 
+			class="poster" 
+			*ngFor="let movie of movies"
+		  >
+			<img
+			  class="poster-portrait"
+			  [src]="'https://media.themoviedb.org/t/p/w220_and_h330_face' + movie.poster_path"
+			  alt="{{ movie.title }}"
+			  (click)="goWatchFromHome(movie.title)"
+			/>
+		  </div>
 		</div>
 	</div>
 </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoaderService } from './services/loader.service';
 
 @Component({
     selector: 'app-root',
@@ -8,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'streamApp_FE';
+  loaderStatus: boolean = false;
+
+  constructor(private loaderService: LoaderService) {}
+
+  ngOnInit() {
+    this.loaderService.loaderStatus$.subscribe((status) => {
+      this.loaderStatus = status;
+    });
+  }
 }
