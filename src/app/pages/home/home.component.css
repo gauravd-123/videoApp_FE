@@ -98,6 +98,9 @@ body {
 	.main-content {
 		margin-left: 0; /* Adjust for no sidebar */
 	}
+	.search-overlay[_ngcontent-ng-c2758329388] {
+		width: 260px;
+	}
   }
 
 .background-video {

@@ -66,8 +66,7 @@ export class HomeComponent implements OnInit {
   goWatchFromHome(clickedText: any){
     this.loader.showLoader();
     let searchTerm = this.cs.getImpWordsToSearch(clickedText);
-    for(let i = 0; i < searchTerm.length; i++){
-      this.cs.serachOmdbMovies(searchTerm[i]).subscribe( {
+      this.cs.serachOmdbMovies(searchTerm).subscribe( {
         next: (result: any) => {
           this.cs.searchResults = result ? [result] : [];
           if(this.cs.searchResults.length > 0){
@@ -83,7 +82,6 @@ export class HomeComponent implements OnInit {
         },
       }
       );
-    }
   }
   
 }

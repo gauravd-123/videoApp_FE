@@ -57,13 +57,12 @@ export class CommonService {
       );
   }
 
-  getImpWordsToSearch(search: string): string[] {
+  getImpWordsToSearch(search: string): string {
     console.log("Original Search String:", search);
 
   // Clean the string by removing unwanted characters
   const cleanedString = search
-    .replace(/\.|\[.*?\]|\d{3,4}p|x264|BluRay|AAC|mp4|-|[\[\]]/gi, " ")
-    .replace(/\.|\[.*?\]|\d{3,4}p|x264|BluRay|AAC|mp4|-|[\[\]]/gi, " ") // Remove unwanted patterns
+    .replace(/\.|\[.*?\]|\d{3,4}p|x264|BluRay|AAC|mp4|mkv|-|[\[\]]/gi, " ") // Remove unwanted patterns
     .replace(/\s+/g, " ") // Replace multiple spaces with one
     .trim();
 
@@ -75,11 +74,11 @@ export class CommonService {
   console.log("Words Array:", words);
 
   // Return up to the first 3 words
-  const firstThreeWords = words.slice(0, 3);
+  // const firstThreeWords = words.slice(0, 3);
 
-  console.log("First Three Words:", firstThreeWords);
+  // console.log("First Three Words:", firstThreeWords);
 
-  return firstThreeWords;
+  return words.join(" ");
     
   } 
   // https://www.omdbapi.com/?type=movie&t=A Bronx Tale&apikey=30285199

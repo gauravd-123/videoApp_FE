@@ -5,6 +5,7 @@ import { CommonService } from 'src/app/services/common.service';
 import { DataService } from 'src/app/services/data.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { SharedService } from 'src/app/services/shared.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-watch',
@@ -43,14 +44,18 @@ export class WatchComponent {
   }
 
   watchMovie() {
-    this.isVideoPlayerActive = true;
     this.loader.showLoader();
     this.cs.getVideoUrlByKey(this.movie.Title).subscribe(
       (res: any) => {
+        if(res.urlList.length == 0){
+          Swal.fire("This show is currently unavailable. Try our available section");
+          this.loader.hideLoader();
 
-        this.videoUrl = environment.r2DevUrl + res.urlList[0].fileName;
-    this.loader.hideLoader();
-        
+        } else {
+          this.videoUrl = environment.r2DevUrl + res.urlList[0].fileName;
+          this.isVideoPlayerActive = true;
+          this.loader.hideLoader();
+        }
       },
       (error) => {
         console.error('Error fetching video URL:', error);
